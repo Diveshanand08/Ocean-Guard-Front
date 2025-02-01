@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/support/page": "app/support/page.js",
+  "/alerts/page": "app/alerts/page.js",
+  "/weather/page": "app/weather/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
+}
