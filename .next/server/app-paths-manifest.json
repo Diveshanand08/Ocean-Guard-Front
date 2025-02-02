@@ -1,6 +1,4 @@
 {
-  "/c/page": "app/c/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/historical-data/page": "app/historical-data/page.js",
-  "/page": "app/page.js"
+  "/spill-incidents/page": "app/spill-incidents/page.js"
 }

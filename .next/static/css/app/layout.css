@@ -1154,6 +1154,9 @@ video {
 .select-none {
   user-select: none;
 }
+.resize {
+  resize: both;
+}
 .list-none {
   list-style-type: none;
 }

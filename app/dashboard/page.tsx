@@ -1,22 +1,20 @@
 "use client"
 
 import { useState } from "react"
-import { MapPin, Filter, Layers, AlertTriangle, Droplet, Wind, Ship, Activity } from "lucide-react"
-import Link from "next/link"
+import { Filter, Layers } from "lucide-react"
 import MapboxMap from "../../components/M2"
 
 export default function Dashboard() {
   const [selectedFilters, setSelectedFilters] = useState({
-    vesselType: "all",
     region: "all",
     timeFrame: "realTime",
     anomaly: "all",
     oilSpill: "all",
-  })
+  });
 
   const handleFilterChange = (filterType: string, value: string) => {
-    setSelectedFilters((prev) => ({ ...prev, [filterType]: value }))
-  }
+    setSelectedFilters((prev) => ({ ...prev, [filterType]: value }));
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -34,20 +32,18 @@ export default function Dashboard() {
             </button>
           </div>
         </div>
+        
+        {/* Map with correct size and auto-fitting */}
         <div className="h-96 relative">
           <MapboxMap filters={selectedFilters} />
           <div className="absolute top-2 right-2 bg-white p-2 rounded-md shadow">
             <div className="flex items-center mb-2">
               <div className="w-4 h-4 bg-red-500 rounded-full mr-2"></div>
-              <span className="text-sm">Oil Spill</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <div className="w-4 h-4 bg-yellow-500 rounded-full mr-2"></div>
-              <span className="text-sm">Anomaly</span>
+              <span className="text-sm">Anomaly Vessel</span>
             </div>
             <div className="flex items-center">
-              <div className="w-4 h-4 bg-blue-500 rounded-full mr-2"></div>
-              <span className="text-sm">Vessel</span>
+              <div className="w-4 h-4 bg-black rounded-full mr-2"></div>
+              <span className="text-sm">Oil Spill</span>
             </div>
           </div>
         </div>
@@ -57,19 +53,6 @@ export default function Dashboard() {
         <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold mb-4">Data Filters</h3>
           <div className="space-y-4">
-            <div>
-              <label className="block mb-2">Vessel Type</label>
-              <select
-                className="w-full border rounded-md p-2"
-                value={selectedFilters.vesselType}
-                onChange={(e) => handleFilterChange("vesselType", e.target.value)}
-              >
-                <option value="all">All</option>
-                <option value="cargo">Cargo</option>
-                <option value="tanker">Oil Tanker</option>
-                <option value="passenger">Passenger</option>
-              </select>
-            </div>
             <div>
               <label className="block mb-2">Region</label>
               <select
@@ -124,5 +107,5 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
-  )
+  );
 }
