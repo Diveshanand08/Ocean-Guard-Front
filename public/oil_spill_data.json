@@ -1,0 +1,73 @@
+{
+    "figures": [
+      {
+        "center": {"latitude": 34.0522, "longitude": -118.2437},
+        "timestamp": "2025-02-01T12:00:00Z",
+        "points": [
+          {"latitude": 34.0530, "longitude": -118.2445, "timestamp": "2025-02-01T12:01:00Z"},
+          {"latitude": 34.0525, "longitude": -118.2435, "timestamp": "2025-02-01T12:02:00Z"},
+          {"latitude": 34.0515, "longitude": -118.2430, "timestamp": "2025-02-01T12:03:00Z"},
+          {"latitude": 34.0505, "longitude": -118.2435, "timestamp": "2025-02-01T12:04:00Z"},
+          {"latitude": 34.0500, "longitude": -118.2445, "timestamp": "2025-02-01T12:05:00Z"},
+          {"latitude": 34.0505, "longitude": -118.2455, "timestamp": "2025-02-01T12:06:00Z"},
+          {"latitude": 34.0515, "longitude": -118.2460, "timestamp": "2025-02-01T12:07:00Z"},
+          {"latitude": 34.0525, "longitude": -118.2455, "timestamp": "2025-02-01T12:08:00Z"},
+          {"latitude": 34.0530, "longitude": -118.2445, "timestamp": "2025-02-01T12:09:00Z"},
+          {"latitude": 34.0540, "longitude": -118.2435, "timestamp": "2025-02-01T12:10:00Z"}
+        ],
+        "water_body": "Pacific Ocean"
+      },
+      {
+        "center": {"latitude": 40.7128, "longitude": -74.0060},
+        "timestamp": "2025-02-01T13:00:00Z",
+        "points": [
+          {"latitude": 40.7135, "longitude": -74.0070, "timestamp": "2025-02-01T13:01:00Z"},
+          {"latitude": 40.7130, "longitude": -74.0060, "timestamp": "2025-02-01T13:02:00Z"},
+          {"latitude": 40.7125, "longitude": -74.0050, "timestamp": "2025-02-01T13:03:00Z"},
+          {"latitude": 40.7115, "longitude": -74.0055, "timestamp": "2025-02-01T13:04:00Z"},
+          {"latitude": 40.7110, "longitude": -74.0065, "timestamp": "2025-02-01T13:05:00Z"},
+          {"latitude": 40.7115, "longitude": -74.0075, "timestamp": "2025-02-01T13:06:00Z"},
+          {"latitude": 40.7120, "longitude": -74.0080, "timestamp": "2025-02-01T13:07:00Z"},
+          {"latitude": 40.7125, "longitude": -74.0075, "timestamp": "2025-02-01T13:08:00Z"},
+          {"latitude": 40.7130, "longitude": -74.0070, "timestamp": "2025-02-01T13:09:00Z"},
+          {"latitude": 40.7135, "longitude": -74.0085, "timestamp": "2025-02-01T13:10:00Z"}
+        ],
+        "water_body": "Atlantic Ocean"
+      },
+      {
+        "center": {"latitude": 48.8566, "longitude": 2.3522},
+        "timestamp": "2025-02-01T14:00:00Z",
+        "points": [
+          {"latitude": 48.8570, "longitude": 2.3510, "timestamp": "2025-02-01T14:01:00Z"},
+          {"latitude": 48.8565, "longitude": 2.3500, "timestamp": "2025-02-01T14:02:00Z"},
+          {"latitude": 48.8555, "longitude": 2.3495, "timestamp": "2025-02-01T14:03:00Z"},
+          {"latitude": 48.8545, "longitude": 2.3500, "timestamp": "2025-02-01T14:04:00Z"},
+          {"latitude": 48.8540, "longitude": 2.3510, "timestamp": "2025-02-01T14:05:00Z"},
+          {"latitude": 48.8545, "longitude": 2.3520, "timestamp": "2025-02-01T14:06:00Z"},
+          {"latitude": 48.8555, "longitude": 2.3525, "timestamp": "2025-02-01T14:07:00Z"},
+          {"latitude": 48.8565, "longitude": 2.3520, "timestamp": "2025-02-01T14:08:00Z"},
+          {"latitude": 48.8570, "longitude": 2.3510, "timestamp": "2025-02-01T14:09:00Z"},
+          {"latitude": 48.8575, "longitude": 2.3500, "timestamp": "2025-02-01T14:10:00Z"}
+        ],
+        "water_body": "Seine River"
+      },
+      {
+        "center": {"latitude": 51.5074, "longitude": -0.1278},
+        "timestamp": "2025-02-01T15:00:00Z",
+        "points": [
+          {"latitude": 51.5070, "longitude": -0.1260, "timestamp": "2025-02-01T15:01:00Z"},
+          {"latitude": 51.5065, "longitude": -0.1250, "timestamp": "2025-02-01T15:02:00Z"},
+          {"latitude": 51.5055, "longitude": -0.1245, "timestamp": "2025-02-01T15:03:00Z"},
+          {"latitude": 51.5045, "longitude": -0.1250, "timestamp": "2025-02-01T15:04:00Z"},
+          {"latitude": 51.5040, "longitude": -0.1260, "timestamp": "2025-02-01T15:05:00Z"},
+          {"latitude": 51.5045, "longitude": -0.1270, "timestamp": "2025-02-01T15:06:00Z"},
+          {"latitude": 51.5055, "longitude": -0.1275, "timestamp": "2025-02-01T15:07:00Z"},
+          {"latitude": 51.5065, "longitude": -0.1270, "timestamp": "2025-02-01T15:08:00Z"},
+          {"latitude": 51.5070, "longitude": -0.1260, "timestamp": "2025-02-01T15:09:00Z"},
+          {"latitude": 51.5075, "longitude": -0.1250, "timestamp": "2025-02-01T15:10:00Z"}
+        ],
+        "water_body": "River Thames"
+      }
+    ]
+  }
+  

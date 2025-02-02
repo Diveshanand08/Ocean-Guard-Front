@@ -1,7 +1,6 @@
 {
-  "/page": "app/page.js",
-  "/support/page": "app/support/page.js",
-  "/alerts/page": "app/alerts/page.js",
-  "/weather/page": "app/weather/page.js",
-  "/dashboard/page": "app/dashboard/page.js"
+  "/c/page": "app/c/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/historical-data/page": "app/historical-data/page.js",
+  "/page": "app/page.js"
 }

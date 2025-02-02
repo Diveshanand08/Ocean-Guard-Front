@@ -1,99 +1,67 @@
-"use client"
-import { MapPin, AlertTriangle, Clock, Droplet, Wind } from "lucide-react"
+"use client";
+import MapComponent from "@/components/Oil_check";
 
-export default function SpillIncidents() {
-  const incidents = [
-    {
-      id: 1,
-      location: "Gulf of Mexico",
-      severity: "High",
-      date: "2023-06-15",
-      status: "Active",
-      estimatedVolume: "500 barrels",
-      affectedArea: "75 km²",
-      cleanupProgress: "20%",
-    },
-    {
-      id: 2,
-      location: "North Sea",
-      severity: "Medium",
-      date: "2023-06-10",
-      status: "Contained",
-      estimatedVolume: "200 barrels",
-      affectedArea: "30 km²",
-      cleanupProgress: "60%",
-    },
-    {
-      id: 3,
-      location: "South China Sea",
-      severity: "Low",
-      date: "2023-06-05",
-      status: "Cleaned",
-      estimatedVolume: "50 barrels",
-      affectedArea: "10 km²",
-      cleanupProgress: "100%",
-    },
-  ]
+// Aggregate all oil spill points into a single array
+const oilSpillsData = [
+  {
+    center: { latitude: 34.0522, longitude: -118.2437 },
+    timestamp: "2025-02-01T12:00:00Z",
+    points: [
+      { latitude: 34.0530, longitude: -118.2445, timestamp: "2025-02-01T12:01:00Z" },
+      { latitude: 34.0525, longitude: -118.2435, timestamp: "2025-02-01T12:02:00Z" },
+      { latitude: 34.0515, longitude: -118.2430, timestamp: "2025-02-01T12:03:00Z" },
+      { latitude: 34.0505, longitude: -118.2435, timestamp: "2025-02-01T12:04:00Z" },
+      { latitude: 34.0500, longitude: -118.2445, timestamp: "2025-02-01T12:05:00Z" }
+    ],
+    water_body: "Pacific Ocean"
+  },
+  {
+    center: { latitude: 40.7128, longitude: -74.0060 },
+    timestamp: "2025-02-01T13:00:00Z",
+    points: [
+      { latitude: 40.7135, longitude: -74.0070, timestamp: "2025-02-01T13:01:00Z" },
+      { latitude: 40.7130, longitude: -74.0060, timestamp: "2025-02-01T13:02:00Z" },
+      { latitude: 40.7125, longitude: -74.0050, timestamp: "2025-02-01T13:03:00Z" },
+      { latitude: 40.7115, longitude: -74.0055, timestamp: "2025-02-01T13:04:00Z" },
+      { latitude: 40.7110, longitude: -74.0065, timestamp: "2025-02-01T13:05:00Z" }
+    ],
+    water_body: "Atlantic Ocean"
+  },
+  {
+    center: { latitude: 51.5074, longitude: -0.1278 },
+    timestamp: "2025-02-01T14:00:00Z",
+    points: [
+      { latitude: 51.5078, longitude: -0.1280, timestamp: "2025-02-01T14:01:00Z" },
+      { latitude: 51.5068, longitude: -0.1260, timestamp: "2025-02-01T14:02:00Z" },
+      { latitude: 51.5060, longitude: -0.1250, timestamp: "2025-02-01T14:03:00Z" }
+    ],
+    water_body: "Thames River"
+  }
+];
 
+// Flatten all spill points into a single array
+const allSpillPoints = oilSpillsData.flatMap(spill => spill.points);
+
+export default function OilSpills() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold text-white mb-8">Spill Incidents</h1>
-
-      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <h2 className="text-2xl font-bold mb-4">Recent Incidents</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {incidents.map((incident) => (
-            <div key={incident.id} className="border rounded-lg p-4">
-              <div className="flex items-center mb-2">
-                <MapPin className="h-5 w-5 mr-2 text-blue-500" />
-                <span className="font-semibold">{incident.location}</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <AlertTriangle className="h-5 w-5 mr-2 text-red-500" />
-                <span>Severity: {incident.severity}</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <Clock className="h-5 w-5 mr-2 text-gray-500" />
-                <span>Date: {incident.date}</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <Droplet className="h-5 w-5 mr-2 text-blue-500" />
-                <span>Estimated Volume: {incident.estimatedVolume}</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <MapPin className="h-5 w-5 mr-2 text-green-500" />
-                <span>Affected Area: {incident.affectedArea}</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <Wind className="h-5 w-5 mr-2 text-purple-500" />
-                <span>Cleanup Progress: {incident.cleanupProgress}</span>
-              </div>
-              <div className="mt-2">
-                <span
-                  className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                    incident.status === "Active"
-                      ? "bg-red-100 text-red-800"
-                      : incident.status === "Contained"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : "bg-green-100 text-green-800"
-                  }`}
-                >
-                  {incident.status}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+    <div>
+      <h1>🌍 Oil Spill Clusters</h1>
+      <div>
+        {/* Pass all points to a single map */}
+        <MapComponent spillPoints={allSpillPoints} />
       </div>
-
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-2xl font-bold mb-4">Incident Map</h2>
-        <div className="bg-gray-200 h-96 flex items-center justify-center">
-          <MapPin className="h-12 w-12 text-blue-500" />
-          <span className="ml-2 text-gray-600">Incident Map Placeholder</span>
-        </div>
-      </div>
+      <style jsx>{`
+        h1 {
+          text-align: center;
+          font-size: 2rem;
+          margin-top: 20px;
+          color: white;
+        }
+        body {
+          background-color: black;
+          padding: 20px;
+        }
+      `}</style>
     </div>
-  )
+  );
 }
-

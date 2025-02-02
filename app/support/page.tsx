@@ -5,7 +5,7 @@ import { MessageSquare, Phone, Mail } from "lucide-react"
 
 export default function Support() {
   const [contactForm, setContactForm] = useState({
-    name: "",
+    subject: "", // Changed to subject instead of name
     email: "",
     message: "",
   })
@@ -15,10 +15,24 @@ export default function Support() {
     setContactForm((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Logic to handle form submission
-    console.log("Form submitted:", contactForm)
+
+    // Sending the form data to the backend
+    const response = await fetch("http://0.0.0.0:8000/store-and-mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        sender_email: contactForm.email,
+        subject: contactForm.subject,
+        message: contactForm.message,
+      }),
+    })
+
+    const result = await response.json()
+    console.log(result)
   }
 
   const faqs = [
@@ -73,11 +87,11 @@ export default function Support() {
           <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block mb-2">Name</label>
+              <label className="block mb-2">Subject</label>
               <input
                 type="text"
-                name="name"
-                value={contactForm.name}
+                name="subject"
+                value={contactForm.subject}
                 onChange={handleInputChange}
                 className="w-full border rounded-md p-2"
                 required
@@ -153,4 +167,3 @@ export default function Support() {
     </div>
   )
 }
-
